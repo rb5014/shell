@@ -12,4 +12,4 @@
 #You are not allowed to use while, for, until and cut
 
 
-awk '{count[$1]++}END {for (ip in count) print count[ip] " " $1 " " $9}' apache-access.log | sort -r
+awk '{count[$1]++} END {for (ip in count) print count[ip],ip,$9}' apache-access.log | sort -nr 

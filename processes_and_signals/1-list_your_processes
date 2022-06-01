@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # script that displays a list of currently running processes.
+# shellcheck disable=SC2009
 #Must show all processes, for all users, including those which might not have a TTY
 #Display in a user-oriented format
 #Show process hierarchy
@@ -7,4 +8,5 @@
 #
 #
 #
-ps aux -H
+ps aux -H 
+

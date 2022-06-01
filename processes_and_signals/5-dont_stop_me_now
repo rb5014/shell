@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #Bash script that stops 4-to_infinity_and_beyond process, with kill
 # shellcheck disable=SC2009
+# shellcheck disable=SC2046
 # To get the specific name of the wcript, pgrep isn't enough( i could only get bash name, not the full script name) so we use ps aux to display all processes witrh their information, grep to look for the name of the script and print it, and awk to print the positionnal parameter $2 which is the PID.
 # I use then kill on the result of this set of commands with kill $(cmd)
 kill $(ps aux | grep '[b]ash ./4*' | awk '{print $2}')

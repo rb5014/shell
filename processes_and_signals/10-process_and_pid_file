@@ -8,10 +8,10 @@
 #Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
 
 echo $$ > /var/run/myscript.pid
-trap 'echo "I hate the kill"; rm /var/run/myscript.pid' SIGTERM
+trap 'echo "I hate the kill"; rm /var/run/myscript.pid; pkill -9 -f ./10-process_and_pid_file' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
 trap 'rm /var/run/myscript.pid' SIGQUIT
 
-while [[ -e /var/run/myscript.pid ]]; do
+while true; do
     echo "To infinity and beyond"
 done

@@ -9,9 +9,9 @@
 
 echo $$ > scriptfile
 
-trap 'echo "I hate the kill"; rm scriptfile; pkill -9 -f ./test ' SIGTERM
+trap 'echo "I hate the kill"' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm scriptfile; kill $$' SIGQUIT
+trap 'rm scriptfile; exit' SIGQUIT SIGTERM
 
 while true; do
     echo "To infinity and beyond"

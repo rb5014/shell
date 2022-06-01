@@ -1,1 +1,4 @@
 #!/usr/bin/env bash
+# Bash script that kills the process 7-highlander ( it is with kill -9) -9 is tghe number associated with SIGKILL (15 for SIGTERM)
+
+pkill -9 -f ./7

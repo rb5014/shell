@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-while true;do
-    echo "I am alive!" > tmpprocess
-    sleep 2
-done

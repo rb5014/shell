@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
 start () {
-    ./script &
+    ./test &
     echo $$ >> my_process
-    echo "$(pgrep -f $$ | awk '{print $2}') started"
+    echo "test started"
 }
 
 stop () {
-    kill $!
+    pkill -f ./test
     rm my_process
-    echo "$! stopped"
+    echo "test stopped"
 }
 
 restart () {
-    kill $!
+    pkill -f ./test
     rm my_process
-    ./script &
+    ./test &
     echo $$ >> my_process
-    echo "$! started"
+    echo "test restarted"
 }
 
 case "$1" in

@@ -7,13 +7,13 @@ start () {
 }
 
 stop () {
-    kill $!
+    pkill -f ./manage_my_process
     sudo rm /var/run/my_process.pid
     echo "manage_my_process stopped"
 }
 
 restart () {
-    kill $!
+    pkill -f ./manage_my_process    
     rm /var/run/my_process.pid
     ./manage_my_process &
   sudo echo $$ >> /var/run/my_process.pid

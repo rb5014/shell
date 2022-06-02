@@ -3,7 +3,7 @@
 start () {
     ./script &
     echo $$ >> my_process
-    echo "$(pgrep -f ./script) started"
+    echo "$(pgrep -f $$ | awk '{print $2}') started"
 }
 
 stop () {
